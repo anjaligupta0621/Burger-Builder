@@ -18,7 +18,6 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount () {
-        console.log('[ComponentDidMount] Burger Builder');   
         this.props.onInitIngredients();
     }
 
@@ -35,36 +34,6 @@ class BurgerBuilder extends Component {
         return sum>0;
     }
 
-    // addIngredientHandler = (type) => {
-    //     const oldCount = this.props.ings[type];
-    //     const updatedCount = oldCount + 1;
-    //     const updatedIngredients = {
-    //         ...this.props.ings
-    //     };
-    //     updatedIngredients[type] = updatedCount;
-    //     const priceAddition = INGREDIENT_PRICES[type];
-    //     const oldPrice = this.state.totalPrice;
-    //     const newPrice = oldPrice + priceAddition;
-    //     this.setState({ingredients: updatedIngredients, totalPrice: newPrice});
-    //     this.updatePurchaseState(updatedIngredients);
-    // }
-
-    // removeIngredientHandler = (type) => {
-    //     const oldCount = this.props.ings[type];
-    //     if (oldCount <= 0) {
-    //         return;
-    //     }
-    //     const updatedCount = oldCount - 1;
-    //     const updatedIngredients = {
-    //         ...this.props.ings
-    //     };
-    //     updatedIngredients[type] = updatedCount;
-    //     const priceDeduction = INGREDIENT_PRICES[type];
-    //     const oldPrice = this.state.totalPrice;
-    //     const newPrice = oldPrice - priceDeduction;
-    //     this.setState({ingredients:updatedIngredients, totalPrice:newPrice});
-    //     this.updatePurchaseState(updatedIngredients);
-    // }
 
     purchaseHandler = () => {
         if (this.props.isAuthenticated) {
@@ -86,7 +55,6 @@ class BurgerBuilder extends Component {
     }
 
     render() {
-        console.log('[Render] Burger Builder');
         const disabledInfo = {
             ...this.props.ings
         };
